@@ -117,7 +117,7 @@
                         </td>
                         <td class="role-cell">
                             <span class="role-badge">
-                                Administrator
+                                {{ $user->role }}
                             </span>
                         </td>
                         <td class="status-cell">
