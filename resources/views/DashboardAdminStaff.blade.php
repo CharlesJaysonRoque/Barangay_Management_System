@@ -6,7 +6,7 @@
     <!-- Page Header -->
     <div class="page-header">
         <div>
-            <h1 class="page-title">Staff Dashboard</h1>
+            <h1 class="page-title">Dashboard</h1>
             <p class="page-subtitle">Welcome back, Team! Here's today's community overview.</p>
         </div>
         <div class="date-badge">

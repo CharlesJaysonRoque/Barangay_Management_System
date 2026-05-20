@@ -106,7 +106,6 @@
                                 <div class="status-indicator status-{{ $statusType }}"></div>
                                 <div>
                                     <div class="status-name">{{ $status->description }}</div>
-                                    <div class="status-details">ID: #{{ $status->id }}</div>
                                 </div>
                             </div>
                         </td>

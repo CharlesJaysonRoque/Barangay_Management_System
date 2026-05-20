@@ -65,7 +65,7 @@
                        placeholder="e.g., 3"
                        step="1"
                        min="1"
-                       max="5"
+                       max="20"
                        value="{{ old('max_term') }}"
                        required>
                 <p class="input-hint">Maximum number of terms allowed for this position</p>

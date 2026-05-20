@@ -83,7 +83,7 @@
                     </td>
                     <td class="title-cell">
                         <span class="title-badge">
-                            {{ $official->officialTitle->title ?? 'N/A' }}
+                            {{ $official->official_title->title ?? 'N/A' }}
                         </span>
                     </td>
                     <td class="contact-cell">
