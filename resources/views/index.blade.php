@@ -280,12 +280,6 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('residents.index') }}">
-                            Residents
-                        </a>
-                    </li>
-
-                    <li>
                         <a href="{{ route('certificate_details.index') }}">
                             Certificates
                         </a>
@@ -298,20 +292,20 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('violations.index') }}">
-                            Violations
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ route('project_details.index') }}">
-                            Projects
+                        <a href="{{ route('residents.index') }}">
+                            Residents
                         </a>
                     </li>
 
                     <li>
                         <a href="{{ route('transaction_details.index') }}">
                             Transactions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('violations.index') }}">
+                            Violations
                         </a>
                     </li>
 
@@ -322,8 +316,14 @@
                         </div>
 
                         <li>
-                            <a href="{{ route('users.index') }}">
-                                Users
+                            <a href="{{ route('certificate_types.index') }}">
+                                Certificate Types
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('complaint_types.index') }}">
+                                Complaint Types
                             </a>
                         </li>
 
@@ -334,14 +334,8 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('certificate_types.index') }}">
-                                Certificate Types
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="{{ route('fines.index') }}">
-                                Fines
+                            <a href="{{ route('official_titles.index') }}">
+                                Official Titles
                             </a>
                         </li>
 
@@ -352,20 +346,8 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('project_types.index') }}">
-                                Project Types
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="{{ route('statuses.index') }}">
-                                Statuses
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="{{ route('official_titles.index') }}">
-                                Official Titles
+                            <a href="{{ route('fines.index') }}">
+                                Fines
                             </a>
                         </li>
 
@@ -376,8 +358,28 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('complaint_types.index') }}">
-                                Complaint Types
+                            <a href="{{ route('project_details.index') }}">
+                                Projects
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('project_types.index') }}">
+                                Project Types
+                            </a>
+                        </li>
+
+                        <hr>
+
+                        <li>
+                            <a href="{{ route('statuses.index') }}">
+                                Statuses
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('users.index') }}">
+                                Users
                             </a>
                         </li>
 
