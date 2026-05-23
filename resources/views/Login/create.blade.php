@@ -518,12 +518,6 @@
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
             </button>
-
-            <div class="footer-links">
-                <a href="#">Forgot password?</a>
-                <span class="divider">•</span>
-                <a href="#">Contact Support</a>
-            </div>
         </form>
     </div>
 </div>
