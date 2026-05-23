@@ -31,11 +31,11 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/admin', function () {
-    return view('admin.adminpage');
+    return redirect()->route('Home');
 })->middleware(['auth', 'admin']);
 
 Route::get('/staff', function () {
-    return view('staff.staffpage');
+    return redirect()->route('Home');
 })->middleware(['auth', 'staff']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('landing_page');

@@ -60,8 +60,21 @@
                 <label class="form-label">
                     <span class="label-text">Contact Number</span>
                 </label>
-                <input type="tel" name="contact_number" class="form-input" placeholder="09123456789" value="{{ old('contact_number') }}">
-                <p class="input-hint">Optional - Mobile or landline number</p>
+
+                <input
+                    type="tel"
+                    name="contact_number"
+                    class="form-input"
+                    placeholder="09*********"
+                    value="{{ old('contact_number') }}"
+                    pattern="09[0-9]{9}"
+                    maxlength="11"
+                >
+
+                <p class="input-hint">
+                    Optional - Must start with 09 and contain 11 digits
+                </p>
+
                 @error('contact_number')
                     <p class="form-error">{{ $message }}</p>
                 @enderror
