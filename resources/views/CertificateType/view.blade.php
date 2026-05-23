@@ -63,14 +63,24 @@
                     </td>
                     <td class="text-center">
                         @php
-                            $assignment = \App\Models\CertificateDetail::where('certificate_type_id', $certificate_type->id)->first();
+                            $assignments = \App\Models\CertificateDetail::where('certificate_type_id', $certificate_type->id)->get();
                         @endphp
-                        @if($assignment && $assignment->official && $assignment->official->resident)
-                            <div class="official-info">
-                                <span class="official-name-small">
-                                    {{ $assignment->official->resident->lastname }}, {{ $assignment->official->resident->firstname }}
-                                </span>
-                            </div>
+
+                        @if($assignments->count())
+
+                            @foreach($assignments as $assignment)
+
+                                @if($assignment->official && $assignment->official->resident)
+                                    <div class="official-info">
+                                        <span class="official-name-small">
+                                            {{ $assignment->official->resident->lastname }},
+                                            {{ $assignment->official->resident->firstname }}
+                                        </span>
+                                    </div>
+                                @endif
+
+                            @endforeach
+
                         @else
                             <div class="official-info">
                                 <span class="official-name-small delete-btn">
