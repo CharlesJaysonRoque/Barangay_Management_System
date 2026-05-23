@@ -67,6 +67,9 @@
             </thead>
             <tbody>
                 @forelse($fines as $fine)
+                @php
+                    $Count = \App\Models\Violation::where('fine_id', $fine->id)->count();
+                @endphp
                 <tr>
                     <td class="text-center">
                         <span class="amount-badge">
@@ -91,22 +94,31 @@
                                 </svg>
                                 Edit
                             </a>
-                            <form
-                                action="{{ route('fines.destroy', $fine->id) }}" method="POST"
-                                method="POST"
-                                class="delete-form"
-                                onsubmit="openDeleteModal(event, this, '{{ $fine->description }} value at ₱{{ $fine->amount }}')"
-                            >
-                                @csrf
-                                @method('DELETE')
-
-                                <button type="submit" class="action-btn delete-btn" title="Delete">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                            @if($Count > 0)
+                                <div class="warning-tooltip">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                                     </svg>
-                                    Delete
-                                </button>
-                            </form>
+                                    <span class="tooltip-text">Cannot delete - has assigned violation(s)</span>
+                                </div>
+                            @else
+                                <form
+                                    action="{{ route('fines.destroy', $fine->id) }}" method="POST"
+                                    method="POST"
+                                    class="delete-form"
+                                    onsubmit="openDeleteModal(event, this, '{{ $fine->description }} value at ₱{{ $fine->amount }}')"
+                                >
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" class="action-btn delete-btn" title="Delete">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                        </svg>
+                                        Delete
+                                    </button>
+                                </form>
+                            @endif
                         </div>
                     </td>
                 </tr>
