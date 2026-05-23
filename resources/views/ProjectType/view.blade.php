@@ -151,7 +151,7 @@
                                     </svg>
                                     Delete
                                 </button>
-                            </form>
+                            </form> 
                         @endif
                     </td>
                 </tr>

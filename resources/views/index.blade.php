@@ -409,17 +409,15 @@
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
 
-                        <button class="btn btn-logout">
+                        <button type="submit" class="btn btn-logout">
                             Logout
                         </button>
                     </form>
 
                     @else
 
-                    <a href="{{ route('login') }}">
-                        <button class="btn btn-login">
+                    <a href="{{ route('login') }}" class="btn btn-login">
                             Login
-                        </button>
                     </a>
 
                     @endauth
